@@ -1,0 +1,1320 @@
+{
+  "name": "n8n_AgenticHarnessSystem",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -224,
+        48
+      ],
+      "id": "96dc2b3d-0f6e-4403-aecb-a79321f97f93",
+      "name": "Telegram Trigger",
+      "webhookId": "855531a6-088d-437d-aa3c-063a8245b51a",
+      "credentials": {
+        "telegramApi": {
+          "id": "GvU5k6iwNBwmW9C9",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        -224,
+        -144
+      ],
+      "id": "2d6bd0ae-2169-4fc8-9421-9712483cef5a",
+      "name": "When chat message received",
+      "webhookId": "8d4cf2aa-7b28-4fee-9d52-77705ef23ab0"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -224,
+        -384
+      ],
+      "id": "14728adc-aadb-486a-87a8-b5f2babad9ce",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "content": "## Agentic Harness Basics\nhttps://www.AgenticHarness.io\nby Solomon Christ AI\n\n## WHAT IS A HARNESS?\nA set of straps or connections that are placed upon or connected to a powerful object or item (Ex. A horse) that allow for additional power and control. A harness organizes Power, adds control, connects systems and works continuously.\n\n",
+        "height": 272,
+        "width": 512
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -256,
+        -832
+      ],
+      "id": "b4f3143b-419f-4a26-8dd8-e17450d4d750",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## Communication Layer",
+        "height": 464,
+        "width": 288,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -272,
+        -224
+      ],
+      "id": "6f8ad4b5-8523-43bb-bba2-7e92728543f4",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "## Heartbeat Layer",
+        "height": 224,
+        "width": 288,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -272,
+        -464
+      ],
+      "id": "24ec2e3e-2f28-48d3-9930-2addfc025538",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "## CORE FILES",
+        "height": 352,
+        "width": 1104,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1072,
+        -272
+      ],
+      "id": "5f06c101-e26f-40d6-9a88-f18446e295fe",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "cbdea8f7-521a-41b4-b12f-bd6d1bf19bdc",
+              "name": "trigger_type",
+              "value": "heartbeat",
+              "type": "string"
+            },
+            {
+              "id": "ba5d44c6-ead5-42e7-86b3-fe9d15a02f07",
+              "name": "source",
+              "value": "schedule",
+              "type": "string"
+            },
+            {
+              "id": "180493d1-4a70-47dc-b421-c8faa23cfe25",
+              "name": "user_message",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "id": "82e1a067-d474-4250-82d2-f1fff557033d",
+              "name": "needs_reply",
+              "value": false,
+              "type": "boolean"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        208,
+        -384
+      ],
+      "id": "cb5cb1a0-e0b3-46e8-a30c-e99b949aeb12",
+      "name": "CLEAN_DATA_1"
+    },
+    {
+      "parameters": {
+        "content": "## Normalize Data",
+        "height": 864,
+        "width": 736
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        144,
+        -528
+      ],
+      "id": "fb44f287-92bf-4f52-99f4-3bdaedc1ca08",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "## Solomon Christ AI www.SolomonChrist.com\nJoin My Skool Community: https://www.skool.com/ai-ml-automation-mastery-2142\n\n![My Image](https://raw.githubusercontent.com/SolomonChrist/AICode/main/solomonchristai_banner_logo.jpg)\n\n## n8n Agentic Harness Agent\n",
+        "height": 540,
+        "width": 620
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -944,
+        -832
+      ],
+      "id": "a8adf34b-202a-4386-9cd9-02d18db7b305",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "cbdea8f7-521a-41b4-b12f-bd6d1bf19bdc",
+              "name": "trigger_type",
+              "value": "human_message",
+              "type": "string"
+            },
+            {
+              "id": "ba5d44c6-ead5-42e7-86b3-fe9d15a02f07",
+              "name": "source",
+              "value": "chat",
+              "type": "string"
+            },
+            {
+              "id": "180493d1-4a70-47dc-b421-c8faa23cfe25",
+              "name": "user_message",
+              "value": "={{ $json.chatInput }}",
+              "type": "string"
+            },
+            {
+              "id": "82e1a067-d474-4250-82d2-f1fff557033d",
+              "name": "needs_reply",
+              "value": true,
+              "type": "boolean"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        208,
+        -144
+      ],
+      "id": "7787e405-c884-48b5-8dd1-820675ef42c9",
+      "name": "CLEAN_DATA_2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "cbdea8f7-521a-41b4-b12f-bd6d1bf19bdc",
+              "name": "trigger_type",
+              "value": "human_message",
+              "type": "string"
+            },
+            {
+              "id": "ba5d44c6-ead5-42e7-86b3-fe9d15a02f07",
+              "name": "source",
+              "value": "telegram",
+              "type": "string"
+            },
+            {
+              "id": "180493d1-4a70-47dc-b421-c8faa23cfe25",
+              "name": "user_message",
+              "value": "={{ $json.message.text }}",
+              "type": "string"
+            },
+            {
+              "id": "82e1a067-d474-4250-82d2-f1fff557033d",
+              "name": "needs_reply",
+              "value": true,
+              "type": "boolean"
+            },
+            {
+              "id": "74a48cf0-63d4-4e3d-bbd1-b0e1dcb4827c",
+              "name": "chat_id",
+              "value": "={{ $json.message.chat.id }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        208,
+        48
+      ],
+      "id": "a07e8242-10f8-42ee-b94d-6ccae538f63d",
+      "name": "CLEAN_DATA_3"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "documentURL": "1JbHfP-gll7nXwzDoMZe7PjGQI6qe2_NYWJu7oxqQr4A"
+      },
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        1136,
+        -144
+      ],
+      "id": "3308b8f4-2688-481b-b013-c6b29c52ee0c",
+      "name": "HEARTBEAT",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "OKJGiKlQYo20vMeG",
+          "name": "Google Docs account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "documentURL": "1mKcZWuG11dgN1s71blyPJ1HRPuFz0e9UhonOWUMPpjQ"
+      },
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        1344,
+        -144
+      ],
+      "id": "1ed584ba-420c-4c45-b0cd-379691b3ea6b",
+      "name": "SOUL",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "OKJGiKlQYo20vMeG",
+          "name": "Google Docs account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "documentURL": "1-hDnJzZZ3Yi24zx983nd3083JagboWbjmSDbWDFq5C8"
+      },
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        1552,
+        -144
+      ],
+      "id": "78232944-4ed3-4685-b39a-cabc7b0e2215",
+      "name": "USER",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "OKJGiKlQYo20vMeG",
+          "name": "Google Docs account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "documentURL": "1gge2Twd_2ioUExECxWG9Uxps2BtVNFsX4a2Mr-XSHGM"
+      },
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        1760,
+        -144
+      ],
+      "id": "c4b5fe4c-4945-4001-8a3b-88f595ff035f",
+      "name": "MEMORY",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "OKJGiKlQYo20vMeG",
+          "name": "Google Docs account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "documentURL": "1z79Zk_0VzkCYJ7Yq6L8DpOGaFLLv0PtGkl-CalphGOI"
+      },
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        1968,
+        -144
+      ],
+      "id": "f0f47e71-81c3-4691-9d1b-29dc5fac47f9",
+      "name": "TASKS",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "OKJGiKlQYo20vMeG",
+          "name": "Google Docs account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## PREPARE FOR INTAKE",
+        "height": 352,
+        "width": 288,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2272,
+        -272
+      ],
+      "id": "94e72bf9-4da5-408b-8ab7-2881bb440a95",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d59c538f-13bf-498e-875d-836e49a5a45f",
+              "name": "trigger_type",
+              "value": "={{ $json.trigger_type }}",
+              "type": "string"
+            },
+            {
+              "id": "7eea755c-97e1-46c2-b29d-57e106a191a0",
+              "name": "source",
+              "value": "={{ $json.source }}",
+              "type": "string"
+            },
+            {
+              "id": "a655a1a5-e715-4d03-9726-7a89d4c31b4b",
+              "name": "user_message",
+              "value": "={{ $json.user_message }}",
+              "type": "string"
+            },
+            {
+              "id": "5cb204d0-8c65-462c-b7b8-af0ecd98e033",
+              "name": "needs_reply",
+              "value": "={{ $json.needs_reply }}",
+              "type": "boolean"
+            },
+            {
+              "id": "3143f731-9ffe-4166-a5ad-7d6a4720f85b",
+              "name": "chat_id",
+              "value": "={{ $json.chat_id }}",
+              "type": "number"
+            },
+            {
+              "id": "9a09d812-e001-4d6a-ba6d-9b46e5c4a98a",
+              "name": "run_time",
+              "value": "={{ $now }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        624,
+        -144
+      ],
+      "id": "fdb9e1c1-be8a-4c01-8f61-8473e7c9e2fd",
+      "name": "NORMALIZED FIELDS"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "62a3f830-631e-494a-bf7e-2b6ed0a83c0d",
+              "name": "heartbeat_text",
+              "value": "={{ $('HEARTBEAT').item.json.content }}",
+              "type": "string"
+            },
+            {
+              "id": "94f80f3c-2576-40ee-83ab-e6a54e7441fc",
+              "name": "soul_text",
+              "value": "={{ $('SOUL').item.json.content }}",
+              "type": "string"
+            },
+            {
+              "id": "b5d5c8dc-04f8-420a-afa4-5c4d2bfa0913",
+              "name": "user_text",
+              "value": "={{ $('USER').item.json.content }}",
+              "type": "string"
+            },
+            {
+              "id": "fd862e7f-1c13-48e6-b3db-3ebb30630667",
+              "name": "memory_text",
+              "value": "={{ $('MEMORY').item.json.content }}",
+              "type": "string"
+            },
+            {
+              "id": "efd99fb5-840a-4581-9ab9-644156f9c186",
+              "name": "tasks_text",
+              "value": "={{ $json.content }}",
+              "type": "string"
+            },
+            {
+              "id": "f2327071-2ed1-4673-9af8-0f12220c76ee",
+              "name": "trigger_type",
+              "value": "={{ $('NORMALIZED FIELDS').item.json.trigger_type }}",
+              "type": "string"
+            },
+            {
+              "id": "29b947bc-d6cf-4cd8-8768-cd28ea0dd34a",
+              "name": "source",
+              "value": "={{ $('NORMALIZED FIELDS').item.json.source }}",
+              "type": "string"
+            },
+            {
+              "id": "dd64651a-762f-4ac6-aeeb-f546a9dfb18e",
+              "name": "user_message",
+              "value": "={{ $('NORMALIZED FIELDS').item.json.user_message }}",
+              "type": "string"
+            },
+            {
+              "id": "fee6f659-57a9-418c-b59f-4c36a0ed10f3",
+              "name": "needs_reply",
+              "value": "={{ $('NORMALIZED FIELDS').item.json.needs_reply }}",
+              "type": "boolean"
+            },
+            {
+              "id": "35632530-72b8-4150-9e49-6840a7d17994",
+              "name": "chat_id",
+              "value": "={{ $('NORMALIZED FIELDS').item.json.chat_id }}",
+              "type": "number"
+            },
+            {
+              "id": "6ef2bf2d-7c53-4d17-8882-571e99d47a53",
+              "name": "run_time",
+              "value": "={{ $('NORMALIZED FIELDS').item.json.run_time }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2352,
+        -144
+      ],
+      "id": "f05ae46e-75f4-4643-a3d3-27007b063a84",
+      "name": "Build Prompt"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a basic Agentic Harness running in n8n.\n\nHEARTBEAT:\n{{ $json.heartbeat_text }}\n\nSOUL:\n{{ $json.soul_text }}\n\nUSER:\n{{ $json.user_text }}\n\nMEMORY:\n{{ $json.memory_text }}\n\nTASKS:\n{{ $json.tasks_text }}\n\nTrigger Type:\n{{ $json.trigger_type }}\n\nSource:\n{{ $json.source }}\n\nUser Message:\n{{ $json.user_message }}\n\nCurrent Time:\n{{ $json.run_time }}\n\nTools:\nYou have access to the following tools:\n\nInstructions:\n- Follow HEARTBEAT.md\n- Follow SOUL.md personality\n- Use USER.md for context\n- Use MEMORY.md for recent memory\n- Use TASKS.md for continuity\n- Keep responses concise\n- For heartbeat runs, only reply if a real outbound message is necessary\n- For chat or telegram runs, usually reply\n- Suggest exactly one next task\n- Optionally provide one short memory update only if it is worth storing\n\nReturn valid JSON only, with no markdown and no extra text:\n\n{\n  \"reply_needed\": true,\n  \"reply_message\": \"your message here\",\n  \"next_task\": \"short next task\",\n  \"memory_update\": \"\"\n}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        2752,
+        -144
+      ],
+      "id": "7e63edef-fe33-47fb-97c2-6dbbdbc39b7e",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "content": "## COGNITION LAYER",
+        "height": 208,
+        "width": 416,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2688,
+        -224
+      ],
+      "id": "0bf5a57a-0751-4509-a60c-0704257a6ed2",
+      "name": "Sticky Note7"
+    },
+    {
+      "parameters": {
+        "content": "## TOOL EXECUATION LAYER",
+        "height": 272,
+        "width": 416,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2944,
+        96
+      ],
+      "id": "ac6f8aeb-0528-462e-a8b3-948e5cca09c2",
+      "name": "Sticky Note8"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-5-nano",
+          "mode": "list",
+          "cachedResultName": "gpt-5-nano"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        2688,
+        80
+      ],
+      "id": "c76e53f6-1d53-4129-b2f9-d63ea2379b14",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "ZVMPyV8UDO7rVYcM",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "let raw =\n  $json.output ??\n  $json.text ??\n  $json.response ??\n  $json.content ??\n  JSON.stringify($json);\n\nif (typeof raw !== 'string') {\n  raw = JSON.stringify(raw);\n}\n\nraw = raw.trim();\n\n// Try direct parse first\ntry {\n  const parsed = JSON.parse(raw);\n\n  return [{\n    json: {\n      reply_needed: !!parsed.reply_needed,\n      reply_message: parsed.reply_message || 'IDLE',\n      next_task: parsed.next_task || 'Wait for next trigger',\n      memory_update: parsed.memory_update || '',\n      raw_agent_output: raw\n    }\n  }];\n} catch (e) {}\n\n// Try extracting first JSON object from messy text\nconst match = raw.match(/\\{[\\s\\S]*\\}/);\n\nif (match) {\n  try {\n    const parsed = JSON.parse(match[0]);\n    return [{\n      json: {\n        reply_needed: !!parsed.reply_needed,\n        reply_message: parsed.reply_message || 'IDLE',\n        next_task: parsed.next_task || 'Wait for next trigger',\n        memory_update: parsed.memory_update || '',\n        raw_agent_output: raw\n      }\n    }];\n  } catch (e) {}\n}\n\n// Safe fallback\nreturn [{\n  json: {\n    reply_needed: false,\n    reply_message: 'IDLE',\n    next_task: 'Wait for next trigger',\n    memory_update: '',\n    raw_agent_output: raw,\n    parse_error: true\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3264,
+        -144
+      ],
+      "id": "24be4fab-c7e5-48b0-b9f5-a8805a0e51a4",
+      "name": "Parse Output"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "65f666d0-577a-4ecd-8cf7-85d602335fb8",
+              "name": "reply_needed",
+              "value": "={{ !!$json.reply_needed }}",
+              "type": "boolean"
+            },
+            {
+              "id": "498f71e4-2776-4662-8a94-d7091f2ba7cc",
+              "name": "reply_message",
+              "value": "={{ $json.reply_message || 'IDLE' }}",
+              "type": "string"
+            },
+            {
+              "id": "3aad826a-febd-4953-9971-b75ff880c95b",
+              "name": "next_task",
+              "value": "={{ $json.next_task || 'Wait for next trigger' }}",
+              "type": "string"
+            },
+            {
+              "id": "434ee2dc-fa34-4a69-9d98-04f4bfd9c17d",
+              "name": "memory_update",
+              "value": "={{ $json.memory_update || '' }}",
+              "type": "string"
+            },
+            {
+              "id": "3b86a9cb-93ac-4166-bd92-614d5d624d4c",
+              "name": "source",
+              "value": "={{ $('Build Prompt').item.json.source }}",
+              "type": "string"
+            },
+            {
+              "id": "10a94aef-3242-47e5-8746-48a1848791f8",
+              "name": "chat_id",
+              "value": "={{ $('Build Prompt').item.json.chat_id }}",
+              "type": "number"
+            },
+            {
+              "id": "cb048d3a-41cb-4abc-aafd-6093346dce63",
+              "name": "trigger_type",
+              "value": "={{ $('Build Prompt').item.json.trigger_type }}",
+              "type": "string"
+            },
+            {
+              "id": "b70aa4c4-9d39-4222-b6a4-f05de50a59bf",
+              "name": "user_message",
+              "value": "={{ $('Build Prompt').item.json.user_message }}",
+              "type": "string"
+            },
+            {
+              "id": "3a1b6318-be5d-4e22-aa6a-00f3aab970e0",
+              "name": "run_time",
+              "value": "={{ $('Build Prompt').item.json.run_time }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3568,
+        -144
+      ],
+      "id": "bb95780c-9bff-4565-be84-d341799de78c",
+      "name": "Normalize Final Output"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "6c665a43-58bd-4dc6-a85b-2fd77eaddfb9",
+              "leftValue": "={{ $json.reply_needed }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3872,
+        -144
+      ],
+      "id": "ea160c5d-b9ee-45c5-9e2f-2a03c37e8085",
+      "name": "If Reply Needed"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "91f9293c-5352-4b62-93c5-207ce223701c",
+              "leftValue": "={{ $json.source }}",
+              "rightValue": "telegram",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        4160,
+        -224
+      ],
+      "id": "56bd6ea8-2741-4f5e-badc-59c226f07ede",
+      "name": "If Telegram"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.chat_id }}",
+        "text": "={{ $json.reply_message }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        4480,
+        -320
+      ],
+      "id": "e9a53ce4-bc91-4d8c-bd8d-c77e803e9454",
+      "name": "Send a text message",
+      "webhookId": "b964a5fc-1c92-4b81-ac34-d838347ac236",
+      "credentials": {
+        "telegramApi": {
+          "id": "GvU5k6iwNBwmW9C9",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        4160,
+        -48
+      ],
+      "id": "4cf4b6c9-88e9-44a5-b8e7-f472797f721a",
+      "name": "No Operation, do nothing1"
+    },
+    {
+      "parameters": {
+        "operation": "sendChatAction",
+        "chatId": "={{ $json.chat_id }}"
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        496,
+        128
+      ],
+      "id": "ee6c5695-ecda-4381-a9b4-244a3a81984c",
+      "name": "Send a chat action",
+      "webhookId": "ed32fcc7-44ef-4522-8026-d76306d5c508",
+      "credentials": {
+        "telegramApi": {
+          "id": "GvU5k6iwNBwmW9C9",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Final Communication and Update Layer",
+        "height": 928,
+        "width": 1296,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3472,
+        -720
+      ],
+      "id": "bf74fcc9-e07b-4b7e-a696-de242d23e27f",
+      "name": "Sticky Note9"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b93a8a03-9020-4279-ad16-1e10b336b3f0",
+              "name": "output",
+              "value": "={{ $json.reply_message }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4480,
+        -96
+      ],
+      "id": "b2a8af87-5dab-4f22-9429-542acd165298",
+      "name": "Final Chat Output"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentURL": "1z79Zk_0VzkCYJ7Yq6L8DpOGaFLLv0PtGkl-CalphGOI",
+        "actionsUi": {
+          "actionFields": [
+            {
+              "action": "insert",
+              "text": "={{ $json.task_insert_text }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        3952,
+        -384
+      ],
+      "id": "05305d35-4471-4499-8999-4c7df4cd690b",
+      "name": "Update Tasks",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "OKJGiKlQYo20vMeG",
+          "name": "Google Docs account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        4144,
+        -384
+      ],
+      "id": "e0d26fc1-0cdc-407c-a6b2-2f70a2edf200",
+      "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "33b06dad-4899-4cba-bb9e-e624bb4b4d59",
+              "leftValue": "={{ $json.memory_update }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3744,
+        -592
+      ],
+      "id": "8b2b69a9-0b4d-4ed0-9ea7-b169199b1333",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "jsCode": "const memoryUpdate = ($json.memory_update || '').trim();\nconst runTime = $json.run_time || new Date().toISOString();\n\nif (!memoryUpdate) {\n  return [{\n    json: {\n      memory_insert_text: ''\n    }\n  }];\n}\n\nreturn [{\n  json: {\n    memory_insert_text: `\\n- ${runTime}: ${memoryUpdate}`\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3968,
+        -608
+      ],
+      "id": "0a48dc7c-0f45-4429-b703-9ea2bc88e5e6",
+      "name": "Prep Memory Update"
+    },
+    {
+      "parameters": {
+        "jsCode": "const nextTask = ($json.next_task || '').trim();\nconst runTime = $json.run_time || new Date().toISOString();\n\nif (!nextTask) {\n  return [{\n    json: {\n      task_insert_text: ''\n    }\n  }];\n}\n\nreturn [{\n  json: {\n    task_insert_text: `\\n- [ ] ${nextTask} | ${runTime}`\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3744,
+        -384
+      ],
+      "id": "75e575c9-1992-4802-ac48-47253d05b0b9",
+      "name": "Prep Tasks Update"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        4336,
+        -608
+      ],
+      "id": "28dad7ed-87ce-4580-b1e3-c0a6c86d8fd3",
+      "name": "No Operation, do nothing2"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentURL": "1gge2Twd_2ioUExECxWG9Uxps2BtVNFsX4a2Mr-XSHGM",
+        "actionsUi": {
+          "actionFields": [
+            {
+              "action": "insert",
+              "text": "={{ $json.memory_insert_text }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        4144,
+        -608
+      ],
+      "id": "4b786a5c-51c9-49b7-9884-2ef330e06779",
+      "name": "Update Memory",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "OKJGiKlQYo20vMeG",
+          "name": "Google Docs account"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "Schedule Trigger": [
+      {
+        "json": {
+          "timestamp": "2026-04-22T19:42:38.537-04:00",
+          "Readable date": "April 22nd 2026, 7:42:38 pm",
+          "Readable time": "7:42:38 pm",
+          "Day of week": "Wednesday",
+          "Year": "2026",
+          "Month": "April",
+          "Day of month": "22",
+          "Hour": "19",
+          "Minute": "42",
+          "Second": "38",
+          "Timezone": "America/Toronto (UTC-04:00)"
+        }
+      }
+    ]
+  },
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "CLEAN_DATA_1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "CLEAN_DATA_2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "CLEAN_DATA_3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CLEAN_DATA_1": {
+      "main": [
+        [
+          {
+            "node": "NORMALIZED FIELDS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CLEAN_DATA_2": {
+      "main": [
+        [
+          {
+            "node": "NORMALIZED FIELDS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CLEAN_DATA_3": {
+      "main": [
+        [
+          {
+            "node": "NORMALIZED FIELDS",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Send a chat action",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HEARTBEAT": {
+      "main": [
+        [
+          {
+            "node": "SOUL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SOUL": {
+      "main": [
+        [
+          {
+            "node": "USER",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "USER": {
+      "main": [
+        [
+          {
+            "node": "MEMORY",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MEMORY": {
+      "main": [
+        [
+          {
+            "node": "TASKS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "TASKS": {
+      "main": [
+        [
+          {
+            "node": "Build Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "NORMALIZED FIELDS": {
+      "main": [
+        [
+          {
+            "node": "HEARTBEAT",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Prompt": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Parse Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Output": {
+      "main": [
+        [
+          {
+            "node": "Normalize Final Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize Final Output": {
+      "main": [
+        [
+          {
+            "node": "If Reply Needed",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Prep Tasks Update",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Reply Needed": {
+      "main": [
+        [
+          {
+            "node": "If Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Operation, do nothing1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Telegram": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Final Chat Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a text message": {
+      "main": [
+        []
+      ]
+    },
+    "Update Tasks": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Prep Memory Update",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prep Tasks Update": {
+      "main": [
+        [
+          {
+            "node": "Update Tasks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prep Memory Update": {
+      "main": [
+        [
+          {
+            "node": "Update Memory",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Memory": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "120679a5-da6f-43a1-a45c-a807e0b1e780",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "e239e71cc33c24fa5360a33f577da9ea25748bfc425b6bdd1354cb6426fb2b0a"
+  },
+  "id": "LUco322APWEanYu6",
+  "tags": []
+}

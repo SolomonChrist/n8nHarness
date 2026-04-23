@@ -1,6 +1,11 @@
 # n8n Harness by Solomon Christ
 A full Agentic Harness made with n8n
 
+# NOTES
+This is just for learning and has a lot to be extended. For all users, use this as a starting point to start learning Agentic Harness structure and methods. When ready you can check out the full AgenticHarness.io system and build around that.
+This system is just there to be a basic bot, like an OpenClaw style system. You still need to add your own tools but a lot of the base core logic and ideas are there.
+Build upon it and make some amazing bots :) 
+
 # Setup Instructions
 -First upload the n8n Workflow to your n8n
 -You can add tools and update the AI Agent Node for more advanced items
@@ -41,16 +46,17 @@ Rules:
 # MEMORY.md
 
 Important memory:
-
-- The user is building a basic n8n agentic AI demo.
-- The demo should stay simple and easy to explain.
-- The system uses a schedule trigger as the heartbeat.
-- The AI Agent node handles reasoning and tool execution.
+- User is building a live n8n Agentic Harness demo.
+- Goal is simplicity and reliability for presentation.
+- Telegram is active as communication layer.
+- Schedule trigger is the heartbeat every 2 minutes.
+- TASKS.md stores tasks and reminders.
 
 Memory rules:
-- Keep only useful memories.
-- Keep memories short.
-- Summarize older memories when this file becomes too long.
+- Keep only durable facts.
+- No idle heartbeat logs.
+- No temporary chatter.
+- Keep concise.
 
 # SOUL.md
 
@@ -79,20 +85,14 @@ Your rules:
 
 # TASKS.md
 
-Recent tasks:
-
-1. Checked for new user input
-2. Reviewed memory for context
-3. Generated a response for the user
-
-Next task:
-Check for the next user input or stay idle if nothing new exists
-
 Task rules:
-- Add the next task at the end of every run
-- Keep only the latest 20 tasks visible
-- Remove or summarize older tasks
-- Keep task descriptions short and clear
+- Keep only the latest 20 total items across active tasks and reminder tasks.
+- Do not duplicate an active task if the same task already exists.
+- Do not duplicate a REMINDER line if the same reminder already exists.
+- Do not add idle heartbeat notes as tasks.
+- Do not add "check for next user input" as a task.
+- Do not wrap an already formatted task in another "- [ ]".
+- Remove a REMINDER line after the reminder is sent.
 
 
 # USER.md

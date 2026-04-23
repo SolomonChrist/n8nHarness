@@ -42,7 +42,10 @@
       "parameters": {
         "rule": {
           "interval": [
-            {}
+            {
+              "field": "minutes",
+              "minutesInterval": 2
+            }
           ]
         }
       },
@@ -533,7 +536,7 @@
     {
       "parameters": {
         "promptType": "define",
-        "text": "=You are a basic Agentic Harness running in n8n.\n\nHEARTBEAT:\n{{ $json.heartbeat_text }}\n\nSOUL:\n{{ $json.soul_text }}\n\nUSER:\n{{ $json.user_text }}\n\nMEMORY:\n{{ $json.memory_text }}\n\nTASKS:\n{{ $json.tasks_text }}\n\nTrigger Type:\n{{ $json.trigger_type }}\n\nSource:\n{{ $json.source }}\n\nUser Message:\n{{ $json.user_message }}\n\nCurrent Time:\n{{ $json.run_time }}\n\nTools:\nYou have access to the following tools:\n\nInstructions:\n- Follow HEARTBEAT.md\n- Follow SOUL.md personality\n- Use USER.md for context\n- Use MEMORY.md for recent memory\n- Use TASKS.md for continuity\n- Keep responses concise\n- For heartbeat runs, only reply if a real outbound message is necessary\n- For chat or telegram runs, usually reply\n- Suggest exactly one next task\n- Optionally provide one short memory update only if it is worth storing\n\nReturn valid JSON only, with no markdown and no extra text:\n\n{\n  \"reply_needed\": true,\n  \"reply_message\": \"your message here\",\n  \"next_task\": \"short next task\",\n  \"memory_update\": \"\"\n}",
+        "text": "=You are a basic Agentic Harness running in n8n.\n\nHEARTBEAT:\n{{ $json.heartbeat_text }}\n\nSOUL:\n{{ $json.soul_text }}\n\nUSER:\n{{ $json.user_text }}\n\nMEMORY:\n{{ $json.memory_text }}\n\nTASKS:\n{{ $json.tasks_text }}\n\nAdditional TASKS rules:\n- TASKS.md may contain normal tasks and machine-readable reminder tasks.\n- A reminder task always starts with: REMINDER|\n- Treat REMINDER lines as pending scheduled reminders, not normal work tasks.\n- On heartbeat runs, check TASKS.md for any REMINDER lines whose due time is now or in the past.\n- If a due reminder exists for telegram, set reply_needed=true and use the reminder message as reply_message.\n- If a reminder has already been handled, do not create it again.\n- Do not create duplicate reminder lines.\n- Do not create idle tasks like \"stay idle until next heartbeat trigger\".\n- Do not create tasks like \"check for next user input\".\n- Do not repeat the same normal task if it already exists in TASKS.md.\n- Only create a new normal task if there is a genuinely new actionable item.\n- If the user asks for a timed reminder, create a REMINDER task line in TASKS.md instead of writing plain-English reminder text.\n\nTrigger Type:\n{{ $json.trigger_type }}\n\nSource:\n{{ $json.source }}\n\nUser Message:\n{{ $json.user_message }}\n\nCurrent Time:\n{{ $json.run_time }}\n\nInstructions:\n- Follow HEARTBEAT.md\n- Follow SOUL.md personality\n- Use USER.md for context\n- Use MEMORY.md for recent memory\n- Use TASKS.md for continuity\n- Keep responses concise\n- For heartbeat runs, only reply if a real outbound message is necessary\n- For chat or telegram runs, usually reply\n- If nothing meaningful happened, return next_task as an empty string\n- Do not invent a task just to fill the field\n- Optionally provide one short memory update only if it is worth storing\n- Your entire output must be one valid JSON object only\n- Do not add any text before or after the JSON\n\nReturn valid JSON only, with no markdown and no extra text:\n\n{\n  \"reply_needed\": true,\n  \"reply_message\": \"your message here\",\n  \"next_task\": \"\",\n  \"memory_update\": \"\",\n  \"task_action\": \"none\",\n  \"task_payload\": \"\"\n}",
         "options": {}
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
@@ -605,7 +608,7 @@
     },
     {
       "parameters": {
-        "jsCode": "let raw =\n  $json.output ??\n  $json.text ??\n  $json.response ??\n  $json.content ??\n  JSON.stringify($json);\n\nif (typeof raw !== 'string') {\n  raw = JSON.stringify(raw);\n}\n\nraw = raw.trim();\n\n// Try direct parse first\ntry {\n  const parsed = JSON.parse(raw);\n\n  return [{\n    json: {\n      reply_needed: !!parsed.reply_needed,\n      reply_message: parsed.reply_message || 'IDLE',\n      next_task: parsed.next_task || 'Wait for next trigger',\n      memory_update: parsed.memory_update || '',\n      raw_agent_output: raw\n    }\n  }];\n} catch (e) {}\n\n// Try extracting first JSON object from messy text\nconst match = raw.match(/\\{[\\s\\S]*\\}/);\n\nif (match) {\n  try {\n    const parsed = JSON.parse(match[0]);\n    return [{\n      json: {\n        reply_needed: !!parsed.reply_needed,\n        reply_message: parsed.reply_message || 'IDLE',\n        next_task: parsed.next_task || 'Wait for next trigger',\n        memory_update: parsed.memory_update || '',\n        raw_agent_output: raw\n      }\n    }];\n  } catch (e) {}\n}\n\n// Safe fallback\nreturn [{\n  json: {\n    reply_needed: false,\n    reply_message: 'IDLE',\n    next_task: 'Wait for next trigger',\n    memory_update: '',\n    raw_agent_output: raw,\n    parse_error: true\n  }\n}];"
+        "jsCode": "let raw =\n  $json.output ??\n  $json.text ??\n  $json.response ??\n  $json.content ??\n  JSON.stringify($json);\n\nif (typeof raw !== 'string') {\n  raw = JSON.stringify(raw);\n}\n\nraw = raw.trim();\n\nfunction normalize(parsed) {\n  return {\n    reply_needed: !!parsed.reply_needed,\n    reply_message: parsed.reply_message || 'IDLE',\n    next_task: parsed.next_task || '',\n    memory_update: parsed.memory_update || '',\n    task_action: parsed.task_action || 'none',\n    task_payload: parsed.task_payload || '',\n    raw_agent_output: raw\n  };\n}\n\ntry {\n  const parsed = JSON.parse(raw);\n  return [{ json: normalize(parsed) }];\n} catch (e) {}\n\nconst match = raw.match(/\\{[\\s\\S]*\\}/);\n\nif (match) {\n  try {\n    const parsed = JSON.parse(match[0]);\n    return [{ json: normalize(parsed) }];\n  } catch (e) {}\n}\n\nreturn [{\n  json: {\n    reply_needed: false,\n    reply_message: 'IDLE',\n    next_task: '',\n    memory_update: '',\n    task_action: 'none',\n    task_payload: '',\n    raw_agent_output: raw,\n    parse_error: true\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -672,6 +675,18 @@
               "id": "3a1b6318-be5d-4e22-aa6a-00f3aab970e0",
               "name": "run_time",
               "value": "={{ $('Build Prompt').item.json.run_time }}",
+              "type": "string"
+            },
+            {
+              "id": "bfb0cbb1-2016-42c1-921d-51654e835970",
+              "name": "task_action",
+              "value": "={{ $json.task_action || 'none' }}",
+              "type": "string"
+            },
+            {
+              "id": "21f43b3b-13f1-4d5a-b4f4-af0c5427bc86",
+              "name": "task_payload",
+              "value": "={{ $json.task_payload || '' }}",
               "type": "string"
             }
           ]
@@ -936,7 +951,7 @@
     },
     {
       "parameters": {
-        "jsCode": "const nextTask = ($json.next_task || '').trim();\nconst runTime = $json.run_time || new Date().toISOString();\n\nif (!nextTask) {\n  return [{\n    json: {\n      task_insert_text: ''\n    }\n  }];\n}\n\nreturn [{\n  json: {\n    task_insert_text: `\\n- [ ] ${nextTask} | ${runTime}`\n  }\n}];"
+        "jsCode": "const oldTasks = $('TASKS').item.json.content || '';\nconst taskAction = ($json.task_action || 'none').trim();\nconst taskPayload = ($json.task_payload || '').trim();\nconst nextTask = ($json.next_task || '').trim();\nconst runTime = $json.run_time || new Date().toISOString();\n\nconst blocked = [\n  'stay idle until next heartbeat trigger',\n  'check for next user input',\n  'check for the next user input or stay idle if nothing new exists',\n  'wait for next trigger',\n  'idle'\n];\n\nfunction normalizeTaskText(task) {\n  return task\n    .replace(/^- \\[ \\]\\s*/, '')\n    .replace(/\\s*\\|\\s*\\d{4}-\\d{2}-\\d{2}T.*$/, '')\n    .trim();\n}\n\nconst existingLines = oldTasks\n  .split('\\n')\n  .map(line => line.trim())\n  .filter(Boolean);\n\nlet lineToInsert = '';\n\n// NORMAL TASK\nif (taskAction === 'add_task') {\n\n  let cleanTask = taskPayload\n    ? normalizeTaskText(taskPayload)\n    : normalizeTaskText(nextTask);\n\n  if (\n    cleanTask &&\n    !blocked.includes(cleanTask.toLowerCase())\n  ) {\n    const existingTasks = existingLines\n      .filter(line => line.startsWith('- [ ]'))\n      .map(line => normalizeTaskText(line).toLowerCase());\n\n    if (!existingTasks.includes(cleanTask.toLowerCase())) {\n      lineToInsert = `\\n- [ ] ${cleanTask} | ${runTime}`;\n    }\n  }\n}\n\n// REMINDER\nif (taskAction === 'add_reminder') {\n  if (taskPayload && !existingLines.includes(taskPayload)) {\n    lineToInsert = `\\n${taskPayload}`;\n  }\n}\n\n// REMOVE REMINDER\nif (taskAction === 'remove_reminder') {\n  lineToInsert = '';\n}\n\n// FALLBACK (older prompt behavior)\nif (!lineToInsert && taskAction === 'none' && nextTask) {\n\n  const cleanTask = normalizeTaskText(nextTask);\n\n  if (\n    cleanTask &&\n    !blocked.includes(cleanTask.toLowerCase())\n  ) {\n    lineToInsert = `\\n- [ ] ${cleanTask} | ${runTime}`;\n  }\n}\n\nreturn [{\n  json: {\n    task_insert_text: lineToInsert\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -1306,11 +1321,11 @@
       ]
     }
   },
-  "active": false,
+  "active": true,
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "120679a5-da6f-43a1-a45c-a807e0b1e780",
+  "versionId": "9afc60f6-3fcf-4f30-b885-25d8502894ae",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "e239e71cc33c24fa5360a33f577da9ea25748bfc425b6bdd1354cb6426fb2b0a"

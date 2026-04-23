@@ -1,6 +1,9 @@
 # n8n Harness by Solomon Christ
 A full Agentic Harness made with n8n
 
+# TEACHING GUIDE
+This is the starter project to accompany the Official Solomon Christ AI Courseware. If you are a trainer, n8n Ambassador, educator or are looking to get the courseware to teach, reach out to solomon@solomonchrist.com and we will send you a payment link for the teaching courseware. For now we do have a freely available Lesson 1 Courseware here and then Lessons 1-3 available in Solomon's FREE Skool Community. The Paid Skool Community has the full training by Solomon but the Official Courseware for teaching for Educators must be purchased seperately. Thank you all and welcome to The Agentic Operator Movement!!
+
 # NOTES
 This is just for learning and has a lot to be extended. For all users, use this as a starting point to start learning Agentic Harness structure and methods. When ready you can check out the full AgenticHarness.io system and build around that.
 This system is just there to be a basic bot, like an OpenClaw style system. You still need to add your own tools but a lot of the base core logic and ideas are there.

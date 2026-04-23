@@ -11,8 +11,8 @@
       "type": "n8n-nodes-base.telegramTrigger",
       "typeVersion": 1.2,
       "position": [
-        -224,
-        48
+        -368,
+        -144
       ],
       "id": "96dc2b3d-0f6e-4403-aecb-a79321f97f93",
       "name": "Telegram Trigger",
@@ -31,8 +31,8 @@
       "type": "@n8n/n8n-nodes-langchain.chatTrigger",
       "typeVersion": 1.4,
       "position": [
-        -224,
-        -144
+        -368,
+        -336
       ],
       "id": "2d6bd0ae-2169-4fc8-9421-9712483cef5a",
       "name": "When chat message received",
@@ -52,8 +52,8 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.3,
       "position": [
-        -224,
-        -384
+        -368,
+        -576
       ],
       "id": "14728adc-aadb-486a-87a8-b5f2babad9ce",
       "name": "Schedule Trigger"
@@ -67,8 +67,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -256,
-        -832
+        -400,
+        -1024
       ],
       "id": "b4f3143b-419f-4a26-8dd8-e17450d4d750",
       "name": "Sticky Note"
@@ -83,8 +83,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -272,
-        -224
+        -416,
+        -416
       ],
       "id": "6f8ad4b5-8523-43bb-bba2-7e92728543f4",
       "name": "Sticky Note1"
@@ -99,8 +99,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -272,
-        -464
+        -416,
+        -656
       ],
       "id": "24ec2e3e-2f28-48d3-9930-2addfc025538",
       "name": "Sticky Note2"
@@ -115,8 +115,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1072,
-        -272
+        928,
+        -464
       ],
       "id": "5f06c101-e26f-40d6-9a88-f18446e295fe",
       "name": "Sticky Note3"
@@ -156,8 +156,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        208,
-        -384
+        64,
+        -576
       ],
       "id": "cb5cb1a0-e0b3-46e8-a30c-e99b949aeb12",
       "name": "CLEAN_DATA_1"
@@ -171,8 +171,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        144,
-        -528
+        0,
+        -720
       ],
       "id": "fb44f287-92bf-4f52-99f4-3bdaedc1ca08",
       "name": "Sticky Note4"
@@ -186,8 +186,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -944,
-        -832
+        -1088,
+        -1024
       ],
       "id": "a8adf34b-202a-4386-9cd9-02d18db7b305",
       "name": "Sticky Note5"
@@ -227,8 +227,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        208,
-        -144
+        64,
+        -336
       ],
       "id": "7787e405-c884-48b5-8dd1-820675ef42c9",
       "name": "CLEAN_DATA_2"
@@ -274,8 +274,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        208,
-        48
+        64,
+        -144
       ],
       "id": "a07e8242-10f8-42ee-b94d-6ccae538f63d",
       "name": "CLEAN_DATA_3"
@@ -288,8 +288,8 @@
       "type": "n8n-nodes-base.googleDocs",
       "typeVersion": 2,
       "position": [
-        1136,
-        -144
+        992,
+        -336
       ],
       "id": "3308b8f4-2688-481b-b013-c6b29c52ee0c",
       "name": "HEARTBEAT",
@@ -308,8 +308,8 @@
       "type": "n8n-nodes-base.googleDocs",
       "typeVersion": 2,
       "position": [
-        1344,
-        -144
+        1200,
+        -336
       ],
       "id": "1ed584ba-420c-4c45-b0cd-379691b3ea6b",
       "name": "SOUL",
@@ -328,8 +328,8 @@
       "type": "n8n-nodes-base.googleDocs",
       "typeVersion": 2,
       "position": [
-        1552,
-        -144
+        1408,
+        -336
       ],
       "id": "78232944-4ed3-4685-b39a-cabc7b0e2215",
       "name": "USER",
@@ -348,8 +348,8 @@
       "type": "n8n-nodes-base.googleDocs",
       "typeVersion": 2,
       "position": [
-        1760,
-        -144
+        1616,
+        -336
       ],
       "id": "c4b5fe4c-4945-4001-8a3b-88f595ff035f",
       "name": "MEMORY",
@@ -368,8 +368,8 @@
       "type": "n8n-nodes-base.googleDocs",
       "typeVersion": 2,
       "position": [
-        1968,
-        -144
+        1824,
+        -336
       ],
       "id": "f0f47e71-81c3-4691-9d1b-29dc5fac47f9",
       "name": "TASKS",
@@ -390,8 +390,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        2272,
-        -272
+        2128,
+        -464
       ],
       "id": "94e72bf9-4da5-408b-8ab7-2881bb440a95",
       "name": "Sticky Note6"
@@ -444,8 +444,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        624,
-        -144
+        480,
+        -336
       ],
       "id": "fdb9e1c1-be8a-4c01-8f61-8473e7c9e2fd",
       "name": "NORMALIZED FIELDS"
@@ -527,8 +527,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2352,
-        -144
+        2208,
+        -336
       ],
       "id": "f05ae46e-75f4-4643-a3d3-27007b063a84",
       "name": "Build Prompt"
@@ -542,8 +542,8 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3,
       "position": [
-        2752,
-        -144
+        2608,
+        -336
       ],
       "id": "7e63edef-fe33-47fb-97c2-6dbbdbc39b7e",
       "name": "AI Agent"
@@ -558,8 +558,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        2688,
-        -224
+        2544,
+        -416
       ],
       "id": "0bf5a57a-0751-4509-a60c-0704257a6ed2",
       "name": "Sticky Note7"
@@ -574,8 +574,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        2944,
-        96
+        2800,
+        -96
       ],
       "id": "ac6f8aeb-0528-462e-a8b3-948e5cca09c2",
       "name": "Sticky Note8"
@@ -594,8 +594,8 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.3,
       "position": [
-        2688,
-        80
+        2544,
+        -112
       ],
       "id": "c76e53f6-1d53-4129-b2f9-d63ea2379b14",
       "name": "OpenAI Chat Model",
@@ -613,8 +613,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        3264,
-        -144
+        3120,
+        -336
       ],
       "id": "24be4fab-c7e5-48b0-b9f5-a8805a0e51a4",
       "name": "Parse Output"
@@ -638,7 +638,7 @@
             {
               "id": "3aad826a-febd-4953-9971-b75ff880c95b",
               "name": "next_task",
-              "value": "={{ $json.next_task || 'Wait for next trigger' }}",
+              "value": "=={{ $json.next_task || '' }}",
               "type": "string"
             },
             {
@@ -696,8 +696,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3568,
-        -144
+        3424,
+        -336
       ],
       "id": "bb95780c-9bff-4565-be84-d341799de78c",
       "name": "Normalize Final Output"
@@ -730,8 +730,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3872,
-        -144
+        3728,
+        -336
       ],
       "id": "ea160c5d-b9ee-45c5-9e2f-2a03c37e8085",
       "name": "If Reply Needed"
@@ -764,8 +764,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        4160,
-        -224
+        4016,
+        -416
       ],
       "id": "56bd6ea8-2741-4f5e-badc-59c226f07ede",
       "name": "If Telegram"
@@ -779,8 +779,8 @@
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
       "position": [
-        4480,
-        -320
+        4336,
+        -512
       ],
       "id": "e9a53ce4-bc91-4d8c-bd8d-c77e803e9454",
       "name": "Send a text message",
@@ -797,8 +797,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        4160,
-        -48
+        4016,
+        -240
       ],
       "id": "4cf4b6c9-88e9-44a5-b8e7-f472797f721a",
       "name": "No Operation, do nothing1"
@@ -811,12 +811,13 @@
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
       "position": [
-        496,
-        128
+        224,
+        -64
       ],
       "id": "ee6c5695-ecda-4381-a9b4-244a3a81984c",
       "name": "Send a chat action",
       "webhookId": "ed32fcc7-44ef-4522-8026-d76306d5c508",
+      "alwaysOutputData": true,
       "credentials": {
         "telegramApi": {
           "id": "GvU5k6iwNBwmW9C9",
@@ -834,8 +835,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        3472,
-        -720
+        3328,
+        -912
       ],
       "id": "bf74fcc9-e07b-4b7e-a696-de242d23e27f",
       "name": "Sticky Note9"
@@ -857,8 +858,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        4480,
-        -96
+        4336,
+        -288
       ],
       "id": "b2a8af87-5dab-4f22-9429-542acd165298",
       "name": "Final Chat Output"
@@ -871,7 +872,7 @@
           "actionFields": [
             {
               "action": "insert",
-              "text": "={{ $json.task_insert_text }}"
+              "text": "={{ $json.task_insert_text || \"\\n\" }}"
             }
           ]
         }
@@ -879,8 +880,8 @@
       "type": "n8n-nodes-base.googleDocs",
       "typeVersion": 2,
       "position": [
-        3952,
-        -384
+        3808,
+        -576
       ],
       "id": "05305d35-4471-4499-8999-4c7df4cd690b",
       "name": "Update Tasks",
@@ -896,8 +897,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        4144,
-        -384
+        4000,
+        -576
       ],
       "id": "e0d26fc1-0cdc-407c-a6b2-2f70a2edf200",
       "name": "No Operation, do nothing"
@@ -930,8 +931,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3744,
-        -592
+        3600,
+        -784
       ],
       "id": "8b2b69a9-0b4d-4ed0-9ea7-b169199b1333",
       "name": "If"
@@ -943,8 +944,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        3968,
-        -608
+        3824,
+        -800
       ],
       "id": "0a48dc7c-0f45-4429-b703-9ea2bc88e5e6",
       "name": "Prep Memory Update"
@@ -956,8 +957,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        3744,
-        -384
+        3600,
+        -576
       ],
       "id": "75e575c9-1992-4802-ac48-47253d05b0b9",
       "name": "Prep Tasks Update"
@@ -967,8 +968,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        4336,
-        -608
+        4192,
+        -800
       ],
       "id": "28dad7ed-87ce-4580-b1e3-c0a6c86d8fd3",
       "name": "No Operation, do nothing2"
@@ -981,7 +982,7 @@
           "actionFields": [
             {
               "action": "insert",
-              "text": "={{ $json.memory_insert_text }}"
+              "text": "={{ $json.memory_insert_text || \"\\n\" }}"
             }
           ]
         }
@@ -989,8 +990,8 @@
       "type": "n8n-nodes-base.googleDocs",
       "typeVersion": 2,
       "position": [
-        4144,
-        -608
+        4000,
+        -800
       ],
       "id": "4b786a5c-51c9-49b7-9884-2ef330e06779",
       "name": "Update Memory",
@@ -1000,6 +1001,21 @@
           "name": "Google Docs account"
         }
       }
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        336,
+        -176
+      ],
+      "id": "74d310f4-fdea-4162-ae01-5eb446ed0d21",
+      "name": "Merge"
     }
   ],
   "pinData": {
@@ -1081,12 +1097,12 @@
       "main": [
         [
           {
-            "node": "NORMALIZED FIELDS",
+            "node": "Send a chat action",
             "type": "main",
             "index": 0
           },
           {
-            "node": "Send a chat action",
+            "node": "Merge",
             "type": "main",
             "index": 0
           }
@@ -1319,13 +1335,35 @@
           }
         ]
       ]
+    },
+    "Send a chat action": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "NORMALIZED FIELDS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": true,
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "9afc60f6-3fcf-4f30-b885-25d8502894ae",
+  "versionId": "d8607dd5-4c74-4545-bdc4-0215b8ca0338",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "e239e71cc33c24fa5360a33f577da9ea25748bfc425b6bdd1354cb6426fb2b0a"
